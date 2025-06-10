@@ -4,29 +4,30 @@ import Link from 'next/link';
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            대기업도 믿고 맡기는<br />
-            밀착 외주 관리
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-50">
+      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+      <div className="container mx-auto px-6 md:px-8 lg:px-12 relative">
+        <div className="max-w-3xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            프로젝트를 위한<br />
+            <span className="text-blue-600">최고의 전문가</span>를 만나보세요
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-blue-100">
-            연간 프로젝트 의뢰 금액 1,617억.<br />
-            연간 프로젝트 의뢰 기업 6,800여개.
+          <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+            기업의 디지털 전환을 위한 최적의 솔루션을 제공합니다.<br />
+            전문가와 함께 성공적인 프로젝트를 시작하세요.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/register"
-              className="bg-white text-blue-600 px-8 py-3 rounded-md font-semibold hover:bg-blue-50 transition-colors text-center"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/register" 
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
             >
               프로젝트 등록하기
             </Link>
-            <Link
-              href="/contact"
-              className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white/10 transition-colors text-center"
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-600 bg-white border-2 border-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
             >
-              무료 상담 신청하기
+              무료 상담받기
             </Link>
           </div>
         </div>

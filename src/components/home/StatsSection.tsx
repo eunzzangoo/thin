@@ -1,87 +1,50 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 
+const stats = [
+  {
+    title: '연간 프로젝트 의뢰 금액',
+    value: 1617,
+    suffix: '억',
+  },
+  {
+    title: '연간 프로젝트 의뢰 기업',
+    value: 6800,
+    suffix: '여개',
+  },
+  {
+    title: '거래액 연평균 성장율',
+    value: 35,
+    suffix: '%',
+  },
+  {
+    title: '계약 프로젝트 완수율',
+    value: 98,
+    suffix: '%',
+  },
+];
+
 export default function StatsSection() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const element = document.getElementById('stats-section');
-    if (element) {
-      observer.observe(element);
-    }
-
-    return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
-    };
-  }, []);
-
   return (
-    <section id="stats-section" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="text-center">
-            <div className="text-4xl font-bold text-blue-600 mb-2">
-              {isVisible && (
+    <section className="py-24 bg-gradient-to-b from-blue-600 to-blue-700">
+      <div className="container mx-auto px-4">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-white mb-3">
                 <CountUp
-                  end={1617}
+                  end={stat.value}
                   duration={2.5}
                   separator=","
-                  suffix="억"
                 />
-              )}
+                <span className="text-blue-200">{stat.suffix}</span>
+              </div>
+              <p className="text-blue-100 text-lg">
+                {stat.title}
+              </p>
             </div>
-            <div className="text-gray-600">연간 프로젝트 의뢰 금액</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-blue-600 mb-2">
-              {isVisible && (
-                <CountUp
-                  end={6800}
-                  duration={2.5}
-                  separator=","
-                  suffix="+"
-                />
-              )}
-            </div>
-            <div className="text-gray-600">연간 프로젝트 의뢰 기업</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-blue-600 mb-2">
-              {isVisible && (
-                <CountUp
-                  end={241}
-                  duration={2.5}
-                  suffix="%"
-                />
-              )}
-            </div>
-            <div className="text-gray-600">거래액 연평균 성장율</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-blue-600 mb-2">
-              {isVisible && (
-                <CountUp
-                  end={99}
-                  duration={2.5}
-                  suffix="%"
-                />
-              )}
-            </div>
-            <div className="text-gray-600">계약 프로젝트 완수율</div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

@@ -2,12 +2,12 @@
 
 import { 
   CodeBracketIcon, 
-  UserGroupIcon, 
-  ChatBubbleLeftRightIcon,
-  DocumentTextIcon,
-  BriefcaseIcon,
-  PresentationChartLineIcon
-} from '@heroicons/react/24/outline';
+  DevicePhoneMobileIcon, 
+  UserGroupIcon,
+  PaintBrushIcon,
+  VideoCameraIcon,
+  ChartBarIcon
+} from '@heroicons/react/24/outline'
 
 const services = [
   {
@@ -18,7 +18,7 @@ const services = [
   {
     title: 'App·Web 개발',
     description: '모바일 앱과 웹 서비스 개발을 전문적으로 진행합니다.',
-    icon: DocumentTextIcon,
+    icon: DevicePhoneMobileIcon,
   },
   {
     title: '개발자 채용',
@@ -28,46 +28,46 @@ const services = [
   {
     title: '디자인·마케팅',
     description: 'UI/UX 디자인 및 마케팅 전략 수립을 지원합니다.',
-    icon: PresentationChartLineIcon,
+    icon: PaintBrushIcon,
   },
   {
     title: '영상·사진',
     description: '프로모션 영상 및 제품 사진 촬영 서비스를 제공합니다.',
-    icon: BriefcaseIcon,
+    icon: VideoCameraIcon,
   },
   {
     title: '컨설팅',
     description: 'IT 프로젝트 기획 및 컨설팅 서비스를 제공합니다.',
-    icon: ChatBubbleLeftRightIcon,
+    icon: ChartBarIcon,
   },
-];
+]
 
 export default function ServiceSection() {
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            중장기 프로젝트 개발부터 단기 인력 충원까지
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+            중장기 프로젝트 개발부터<br />
+            단기 인력 충원까지
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-lg text-gray-600 max-w-xl mx-auto">
             다양한 IT 서비스를 제공합니다
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <div
+            <div 
               key={index}
-              className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
+              className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all border border-gray-100 hover:border-blue-100 group"
             >
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
                 <service.icon className="w-6 h-6 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
                 {service.title}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 leading-relaxed">
                 {service.description}
               </p>
             </div>
@@ -75,5 +75,5 @@ export default function ServiceSection() {
         </div>
       </div>
     </section>
-  );
+  )
 } 
