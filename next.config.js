@@ -1,12 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? '/thin' : '',
+  basePath: '/thin',
   images: {
     unoptimized: true,
   },
-  trailingSlash: false,
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/thin' : '',
 }
 
 module.exports = nextConfig 
