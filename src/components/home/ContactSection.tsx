@@ -9,7 +9,7 @@ export default function ContactSection() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             1분 안에 간편하게 신청하고,<br />
-            매니저와 상담 받아보세요
+            매니저와 상담 받아보세요 
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
