@@ -5,8 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  trailingSlash: true,
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/thin/' : '',
+  trailingSlash: false,
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/thin' : '',
 }
 
 module.exports = nextConfig 
