@@ -51,7 +51,7 @@ export default function ServiceSection() {
             중장기 프로젝트 개발부터 단기 인력 충원까지
           </h2>
           <p className="text-xl text-gray-600">
-            크몽 엔터프라이즈는 다양한 IT 서비스를 제공합니다
+            다양한 IT 서비스를 제공합니다
           </p>
         </div>
 
