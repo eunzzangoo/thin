@@ -12,21 +12,20 @@
     "@heroicons/react": "^2.1.1",
     "@supabase/auth-helpers-nextjs": "^0.8.7",
     "@supabase/supabase-js": "^2.39.3",
-    "firebase": "^10.7.2",
+    "firebase": "^10.14.1",
     "next": "14.1.0",
-    "react": "^18.2.0",
-    "react-countup": "^6.5.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/node": "^20.11.5",
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
     "autoprefixer": "^10.4.17",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.1",
     "eslint-config-next": "14.1.0",
-    "postcss": "^8.4.33",
-    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5.3.3"
   }
 }
