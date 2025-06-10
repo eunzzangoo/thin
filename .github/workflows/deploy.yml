@@ -29,6 +29,8 @@ jobs:
         run: |
           npm run build
           ls -la out/
+        env:
+          NODE_ENV: production
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
