@@ -15,6 +15,14 @@ const nextConfig = {
     });
     return config;
   },
+  // 정적 내보내기 설정
+  exportPathMap: async function () {
+    return {
+      '/': { page: '/' },
+      '/404': { page: '/404' },
+      '/_not-found': { page: '/_not-found' },
+    };
+  },
 }
 
 module.exports = nextConfig 
