@@ -1,53 +1,88 @@
 'use client';
 
 import Link from 'next/link';
-import Logo from './Logo';
+import { useState } from 'react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
-      <div className="m-0 mx-auto flex w-[1200px] flex-row items-center p-0 px-4 h-[60px]">
-        {/* 로고 */}
-        <Link href="/" className="cursor-pointer no-underline" aria-label="홈으로 이동">
-          <Logo />
-        </Link>
-
-        {/* 여백 */}
-        <div className="flex-grow" />
-
-        {/* 중앙 메뉴 */}
-        <section>
-          <div className="flex">
-            <Link href="/enterprise/projects/new" className="mr-6 flex items-center justify-center">
-              <p className="text-[14px] leading-[21px] text-gray-900 font-medium">프로젝트 등록</p>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-100">
+      <div className="container mx-auto px-6 md:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-20">
+          <Link 
+            href="/" 
+            className="cursor-pointer no-underline group"
+            aria-label="홈으로 이동"
+          >
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">th_in</span>
+              <span className="text-xs text-gray-500 group-hover:text-blue-500 transition-colors">일과 사람이 만나는 곳</span>
+            </div>
+          </Link>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <Link href="/about" className="text-gray-600 hover:text-blue-600 transition-colors">
+              서비스 소개
             </Link>
-            <Link href="/enterprise/requests" className="mr-6 flex items-center justify-center">
-              <p className="text-[14px] leading-[21px] text-gray-900 font-medium">프로젝트 찾기</p>
+            <Link href="/projects" className="text-gray-600 hover:text-blue-600 transition-colors">
+              프로젝트
+            </Link>
+            <Link href="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">
+              문의하기
+            </Link>
+            <Link 
+              href="/register" 
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              프로젝트 등록
             </Link>
           </div>
-        </section>
 
-        {/* 우측 메뉴 */}
-        <div className="flex flex-row items-center">
+          {/* Mobile Navigation Button */}
           <button
-            type="button"
-            className="relative h-9 flex items-center mr-6 no-underline whitespace-nowrap text-inherit bg-transparent border-none p-0 cursor-pointer"
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
-            <p className="text-[14px] leading-[21px] text-gray-900 font-medium">전문가 등록</p>
+            {isOpen ? (
+              <XMarkIcon className="w-6 h-6 text-gray-600" />
+            ) : (
+              <Bars3Icon className="w-6 h-6 text-gray-600" />
+            )}
           </button>
-          <button
-            type="button"
-            className="relative h-9 flex items-center no-underline whitespace-nowrap text-inherit bg-transparent border-none p-0 cursor-pointer mr-[28px]"
-          >
-            <p className="text-[14px] leading-[21px] text-gray-900 font-medium">로그인</p>
-          </button>
-          <Link
-            href="/signup"
-            className="flex h-9 w-[81px] items-center justify-center rounded-lg bg-gray-900 text-sm font-medium text-white transition-[background-color] duration-[0.3s] hover:bg-gray-700 active:bg-gray-800"
-          >
-            회원가입
-          </Link>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {isOpen && (
+          <div className="md:hidden py-4 space-y-4">
+            <Link 
+              href="/about" 
+              className="block px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
+            >
+              서비스 소개
+            </Link>
+            <Link 
+              href="/projects" 
+              className="block px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
+            >
+              프로젝트
+            </Link>
+            <Link 
+              href="/contact" 
+              className="block px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
+            >
+              문의하기
+            </Link>
+            <Link 
+              href="/register" 
+              className="block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center"
+            >
+              프로젝트 등록
+            </Link>
+          </div>
+        )}
       </div>
     </nav>
   );
