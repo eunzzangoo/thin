@@ -4,6 +4,14 @@ import ProjectSection from '@/components/home/ProjectSection';
 import StatsSection from '@/components/home/StatsSection';
 import ContactSection from '@/components/home/ContactSection';
 
+export function generateStaticParams() {
+  return [
+    { path: '/' },
+    { path: '/404' },
+    { path: '/_not-found' },
+  ];
+}
+
 export default function Home() {
   return (
     <>
@@ -15,3 +23,4 @@ export default function Home() {
     </>
   );
 }
+ 
