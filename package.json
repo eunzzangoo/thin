@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "deploy": "npm run build && node create-nojekyll.js && gh-pages -d out"
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "deploy": "npm run build && node create-nojekyll.js && gh-pages -d out",
+  "export": "next export"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
