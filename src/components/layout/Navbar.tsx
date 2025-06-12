@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Logo from './Logo';
 import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
@@ -16,35 +17,60 @@ export default function Navbar() {
             className="cursor-pointer no-underline group"
             aria-label="홈으로 이동"
           >
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">th_in</span>
-              <span className="text-xs text-gray-500 group-hover:text-blue-500 transition-colors">일과 사람이 만나는 곳</span>
+            <div className="flex flex-col items-center">
+              <Logo />
             </div>
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/about" className="text-gray-600 hover:text-blue-600 transition-colors">
-              서비스 소개
-            </Link>
-            <Link href="/projects" className="text-gray-600 hover:text-blue-600 transition-colors">
-              프로젝트
-            </Link>
-            <Link href="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">
-              문의하기
-            </Link>
-            <Link 
-              href="/register" 
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              프로젝트 등록
-            </Link>
+          <div className="hidden md:flex items-center space-x-1">
+            <div className="flex items-center space-x-1 mr-4">
+              <Link 
+                href="/about" 
+                className="px-4 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+              >
+                서비스 소개
+              </Link>
+              <Link 
+                href="/projects" 
+                className="px-4 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+              >
+                프로젝트
+              </Link>
+              <Link 
+                href="/contact" 
+                className="px-4 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+              >
+                문의하기
+              </Link>
+            </div>
+            <div className="flex items-center space-x-2 pl-4 border-l border-gray-200">
+              <Link 
+                href="/register" 
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              >
+                프로젝트 등록
+              </Link>
+              <Link 
+                href="/login" 
+                className="px-4 py-2 bg-white text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-medium"
+              >
+                로그인
+              </Link>
+              <Link 
+                href="/signup" 
+                className="px-4 py-2 bg-white text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-medium"
+              >
+                회원가입
+              </Link>
+            </div>
           </div>
 
-          {/* Mobile Navigation Button */}
+          {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            aria-label="메뉴 열기"
           >
             {isOpen ? (
               <XMarkIcon className="w-6 h-6 text-gray-600" />
@@ -54,33 +80,49 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 space-y-4">
-            <Link 
-              href="/about" 
-              className="block px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
-            >
-              서비스 소개
-            </Link>
-            <Link 
-              href="/projects" 
-              className="block px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
-            >
-              프로젝트
-            </Link>
-            <Link 
-              href="/contact" 
-              className="block px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
-            >
-              문의하기
-            </Link>
-            <Link 
-              href="/register" 
-              className="block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center"
-            >
-              프로젝트 등록
-            </Link>
+          <div className="md:hidden py-4 space-y-2">
+            <div className="px-4 py-2">
+              <Link 
+                href="/about" 
+                className="block px-4 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+              >
+                서비스 소개
+              </Link>
+              <Link 
+                href="/projects" 
+                className="block px-4 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+              >
+                프로젝트
+              </Link>
+              <Link 
+                href="/contact" 
+                className="block px-4 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+              >
+                문의하기
+              </Link>
+            </div>
+            <div className="px-4 py-2 border-t border-gray-100">
+              <Link 
+                href="/register" 
+                className="block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center font-medium mb-2"
+              >
+                프로젝트 등록
+              </Link>
+              <Link 
+                href="/login" 
+                className="block px-4 py-2 bg-white text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 transition-colors text-center font-medium mb-2"
+              >
+                로그인
+              </Link>
+              <Link 
+                href="/signup" 
+                className="block px-4 py-2 bg-white text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 transition-colors text-center font-medium"
+              >
+                회원가입
+              </Link>
+            </div>
           </div>
         )}
       </div>
