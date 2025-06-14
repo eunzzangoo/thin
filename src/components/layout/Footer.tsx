@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Logo from './Logo';
 import { FaCommentDots, FaPenNib, FaInstagram } from 'react-icons/fa';
 
@@ -12,6 +13,7 @@ export default function Footer() {
             {/* 회사 로고 */}
             <div className="mb-12 flex flex-col items-center">
               <Logo />
+              <p className="text-sm text-gray-500 mt-2">일과 사람이 만나는 곳</p>
             </div>
 
             {/* 회사 정보 */}

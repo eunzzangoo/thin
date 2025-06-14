@@ -59,7 +59,7 @@ export default function HeroSection() {
               <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
             </Link>
             <Link 
-              href="/contact" 
+              href="/contact"
               className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-600 bg-white border-2 border-blue-600 rounded-lg hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               무료 상담받기

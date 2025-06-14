@@ -26,7 +26,7 @@ export default function BenefitSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-            <span className="inline-block text-blue-600 mr-2">'th_in'</span>
+            <span className="inline-block text-blue-600 mr-2">'쓰인'</span>
             <span className="inline-block">이 하는 일/역할</span>
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed">

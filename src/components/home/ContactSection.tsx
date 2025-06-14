@@ -1,6 +1,14 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
+import { useEffect } from 'react';
+
+declare global {
+  interface Window {
+    ChannelIO: any;
+  }
+}
 
 export default function ContactSection() {
   return (
@@ -8,7 +16,7 @@ export default function ContactSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-8 leading-tight">
-            <span className="inline-block text-blue-600 mr-2">'th_in'</span>
+            <span className="inline-block text-blue-600 mr-2">'쓰인'</span>
             <span className="inline-block">과 함께하세요</span>
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-12">
@@ -23,13 +31,29 @@ export default function ContactSection() {
               프로젝트 등록하기
               <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
             </Link>
-            <Link 
-              href="/consult" 
+            <button
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.ChannelIO) {
+                  window.ChannelIO('showChat');
+                }
+              }}
               className="group inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-blue-600 bg-white border-2 border-blue-600 rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
-              무료 상담 신청하기
-              <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-            </Link>
+              문의하기
+              <svg
+                className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>

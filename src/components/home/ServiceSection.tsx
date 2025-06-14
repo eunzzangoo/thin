@@ -30,7 +30,7 @@ export default function ServiceSection() {
               <div className="bg-gradient-to-tl from-white via-blue-50 to-blue-100/60 backdrop-blur-md rounded-3xl p-12 md:p-16 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/70 flex flex-col items-center text-center gap-8">
                 <div className="relative w-full h-48 mb-12 rounded-2xl overflow-hidden">
                   <Image
-                    src="/images/challenge-1.jpg"
+                    src="/home_lackofmanpower.png"
                     alt="인력 부족 문제"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -62,7 +62,7 @@ export default function ServiceSection() {
               <div className="bg-gradient-to-tl from-white via-blue-50 to-blue-100/60 backdrop-blur-md rounded-3xl p-12 md:p-16 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/70 flex flex-col items-center text-center gap-8">
                 <div className="relative w-full h-48 mb-12 rounded-2xl overflow-hidden">
                   <Image
-                    src="/images/challenge-2.jpg"
+                    src="/home_SystemConstruction.png"
                     alt="시스템 구축 문제"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -94,7 +94,7 @@ export default function ServiceSection() {
               <div className="bg-gradient-to-tl from-white via-blue-50 to-blue-100/60 backdrop-blur-md rounded-3xl p-12 md:p-16 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/70 flex flex-col items-center text-center gap-8">
                 <div className="relative w-full h-48 mb-12 rounded-2xl overflow-hidden">
                   <Image
-                    src="/images/challenge-3.jpg"
+                    src="/home_digitalConversion.png"
                     alt="디지털 전환 문제"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -123,7 +123,7 @@ export default function ServiceSection() {
           <div className="w-full p-12 md:p-16 flex flex-col items-center mb-12 backdrop-blur-md">
             <span className="text-3xl md:text-4xl font-extrabold text-blue-800 tracking-tight mb-4 drop-shadow-sm">전문가 검증 프로세스</span>
             <p className="text-blue-900 text-lg md:text-2xl text-center font-semibold leading-relaxed max-w-xl drop-shadow-sm">
-              <span className="font-bold text-blue-700">쓰인</span>은 시장에서 가장 엄격한 수준의 각 단계별 프로세스를 도입하여,<br className='hidden md:block' />
+              <span className="font-bold text-blue-700">'쓰인'</span>은 시장에서 가장 엄격한 수준의 <br/> 각 단계별 프로세스를 도입하여,<br className='hidden md:block' />
               <span className="font-extrabold text-blue-600">'검증된 품질'</span>을 약속 드립니다.
             </p>
           </div>
