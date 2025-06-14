@@ -69,9 +69,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           } else {
             console.log('Channel.io initialized successfully:', user);
             window.ChannelIOInitialized = true;
-            // 초기화 성공 후 채팅창 열기
-            if (window.location.pathname === '/contact') {
-              window.ChannelIO('showChat');
+            
+            // 경로 체크 및 채팅창 열기 (1초 딜레이)
+            const currentPath = window.location.pathname;
+            const isContactPage = currentPath === '/contact' || currentPath === '/contact/';
+            console.log('Current path:', currentPath, 'Is contact page:', isContactPage);
+            
+            if (isContactPage) {
+              console.log('Opening chat on contact page...');
+              setTimeout(() => {
+                window.ChannelIO('showChat');
+              }, 1000);
             }
           }
         });
