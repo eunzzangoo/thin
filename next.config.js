@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const nextConfig = {
-  //output: 'export',
+  output: 'export',
   images: {
     unoptimized: true,
     remotePatterns: [
