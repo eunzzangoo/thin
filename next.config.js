@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   images: {
@@ -11,6 +11,7 @@ const nextConfig = {
     ],
   },
   trailingSlash: true,
+  distDir: 'out',
 }
 
 module.exports = nextConfig 
