@@ -12,6 +12,9 @@ const nextConfig = {
   },
   trailingSlash: true,
   distDir: 'out',
+  experimental: {
+    appDir: true
+  }
 }
 
 module.exports = nextConfig 
