@@ -10,7 +10,7 @@ export default function AboutPage() {
         <Logo />
         <h1 className="text-3xl md:text-4xl font-extrabold text-blue-800 mb-2 tracking-tight">서비스 소개</h1>
         <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
-          <span className="font-bold text-blue-700">thin</span>은 일과 사람이 만나는 곳입니다.<br/>
+          <span className="font-bold text-blue-700">'쓰인'</span>은 일과 사람이 만나는 곳입니다.<br/>
           검증된 전문가와 기업을 연결하여, 성공적인 프로젝트와 비즈니스 성장을 지원합니다.
         </p>
         <div className="w-full flex flex-col gap-6 text-left">
@@ -25,7 +25,7 @@ export default function AboutPage() {
             </ul>
           </div>
           <div>
-            <h2 className="text-xl font-bold text-blue-700 mb-1">thin만의 차별점</h2>
+            <h2 className="text-xl font-bold text-blue-700 mb-1">쓰인만의 차별점</h2>
             <ul className="list-disc list-inside text-gray-700 text-base md:text-lg">
               <li>상위 1~5% 검증된 전문가 풀</li>
               <li>프로젝트 전 과정 PM 매니저 지원</li>

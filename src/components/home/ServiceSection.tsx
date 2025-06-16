@@ -105,7 +105,7 @@ export default function ServiceSection() {
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight leading-snug">디지털 전환 문제</h3>
-                <p className="text-gray-600 leading-relaxed mb-10 text-base md:text-lg">빠르게 변화하는 디지털 환경에 대응하기 위한 전략 수립의 어려움</p>
+                <p className="text-gray-600 leading-relaxed mb-10 text-base md:text-lg">빠르게 변화하는 디지털<br/>환경에 대응하기 위한<br/>전략 수립의 어려움</p>
                 <div className="flex items-center justify-center text-blue-600 gap-2 mb-4">
                   <span className="text-sm font-semibold">Solution</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 ml-2">
