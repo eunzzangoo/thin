@@ -134,11 +134,6 @@ PCB 설계 및 신규 전장부품 개발
   return (
     <main className="min-h-screen bg-gray-50 pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* 헤더 섹션 */}
-        <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">프로젝트</h1>
-          <p className="text-gray-600">다양한 프로젝트를 찾아보세요</p>
-        </div>
 
         {/* 필터 및 정렬 섹션 */}
         <div className="bg-white rounded-lg shadow-sm p-4 mb-6">
