@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { ProjectDetail } from '@/components/ProjectDetail';
 
 type Project = {
   id: string;
@@ -12,6 +13,12 @@ type Project = {
   budget: string;
   deadline: string;
   isRemote: boolean;
+  startDate: string;
+  endDate: string;
+  salary: string;
+  clientType: string;
+  workType: string;
+  summary: string;
 };
 
 export default function ProjectsPage() {
@@ -22,53 +29,90 @@ export default function ProjectsPage() {
   const projects: Project[] = [
     {
       id: '1',
-      title: '전기/계장 제어시스템 설계, PLC, HMI 자동제어 업무',
-      description: '액상 포장용 충진기 등 자동화 기계의 제어시스템 설기(PLC, HMI) 업무를 담당할 경력 5년 이상의 전문가를 모집합니다',
+      title: '제어시스템 설계/PLC/HMI 자동제어 전문가',
+      description: '- 제어시스템 설계, PLC, HMI 자동제어 업무 가능자(경력 5년 이상)',
       period: '6개월 이상',
       applicants: 3,
       budget: '1,800만원',
-      deadline: 'D-15',
+      deadline: 'D-7',
       isRemote: true,
+      startDate: '2025-07-01',
+      endDate: '2025-12-31',
+      salary: '3,000,000원(6개월 총 18,000,000원)',
+      clientType: '기업(법인ㆍ개인사업자ㆍ예비창업자)',
+      workType: '원격',
+      summary: '제어시스템 설계, PLC, HMI 자동제어 업무 가능자(경력 5년 이상)'
     },
     {
       id: '2',
-      title: '전장부품(전자/전기장치) 개발/설계',
-      description: 'Wiring harness 회로 개발/설계',
+      title: 'Wiring harness 회로 개발/설계 전문가',
+      description: `Wiring harness 회로 개발/설계
+PCB 설계 및 신규 전장부품 개발
+해당 직무 경험자(CAD/CAD 능숙자)`,
       period: '3개월',
       applicants: 8,
       budget: '1,050만원',
-      deadline: 'D-15',
+      deadline: 'D-5',
       isRemote: true,
+      startDate: '2025-07-01',
+      endDate: '2025-09-30',
+      salary: '3,500,000원(3개월 총 10,500,000원)',
+      clientType: '기업(법인ㆍ개인사업자ㆍ예비창업자)',
+      workType: '원격',
+      summary: 'Wiring harness 회로 개발/설계, PCB 설계 및 신규 전장부품 개발'
     },
     {
       id: '3',
-      title: '건설물폐기물처리장 경영지원부 회계 업무',
-      description: '건설폐기물처리장 경영지원부 회계 직원을 모집합니다',
+      title: '회계 및 사무관리 전문가',
+      description: `- 주 업무 : 회계 및 사무관리 
+1) 본사 및 계열사 매입매출 관리 
+2) 통계관리 및 사무관리 
+3) 급여 및 휴가관리 
+4) 일반회계`,
       period: '12개월 이상',
       applicants: 11,
       budget: '250만원/월',
-      deadline: 'D-28',
+      deadline: 'D-3',
       isRemote: true,
+      startDate: '2025-07-01',
+      endDate: '2025-12-31',
+      salary: '2,500,000원',
+      clientType: '기업(법인ㆍ개인사업자ㆍ예비창업자)',
+      workType: '원격',
+      summary: '본사 및 계열사 매입매출 관리, 통계관리 및 사무관리, 급여 및 휴가관리, 일반회계'
     },
     {
       id: '4',
-      title: '기계설계(플랜트공학) 경력자 모집',
-      description: '기계설계(플랜트공학), 경력 3년 이상의 전문가를 모집합니다',
+      title: '기계 설계 및 발주 전문가',
+      description: '- 기계 설계, 발주서 작성 및 자재신청, 신고서류 작성',
       period: '12개월 이상',
       applicants: 2,
       budget: '350만원/월',
-      deadline: 'D-15',
+      deadline: 'D-10',
       isRemote: true,
+      startDate: '2025-07-14',
+      endDate: '',
+      salary: '3,500,000원',
+      clientType: '기업(법인ㆍ개인사업자ㆍ예비창업자)',
+      workType: '원격',
+      summary: '기계 설계, 발주서 작성 및 자재신청, 신고서류 작성'
     },
     {
       id: '5',
-      title: '사무 관리직 모집',
-      description: '사무 관리직 경력 1년 이상의 전문가를 모집합니다',
+      title: '경리회계/영업지원 전문가',
+      description: `경리회계 업무/영업지원 업무
+온라인 판매 관리 및 송장 출력`,
       period: '3개월',
       applicants: 12,
       budget: '210만원/월',
-      deadline: 'D-15',
+      deadline: 'D-2',
       isRemote: true,
+      startDate: '2025-07-01',
+      endDate: '2025-09-30',
+      salary: '2,100,000원',
+      clientType: '기업(법인ㆍ개인사업자ㆍ예비창업자)',
+      workType: '원격',
+      summary: '경리회계 업무/영업지원 업무, 온라인 판매 관리 및 송장 출력'
     },
   ];
 
@@ -138,44 +182,7 @@ export default function ProjectsPage() {
         {/* 프로젝트 목록 */}
         <div className="grid grid-cols-1 gap-6">
           {projects.map((project) => (
-            <Link
-              key={project.id}
-              href={`/projects/${project.id}`}
-              className="block bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-4">
-                  <div className="flex items-center gap-2">
-                    {project.isRemote && (
-                      <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs font-medium">
-                        원격
-                      </span>
-                    )}
-                    <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs font-medium">
-                      모집 {project.deadline}
-                    </span>
-                  </div>
-                </div>
-
-                <h2 className="text-xl font-semibold text-gray-900 mb-2">{project.title}</h2>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                  <div className="flex items-center gap-1">
-                    <span className="font-medium">기간:</span>
-                    <span>{project.period}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <span className="font-medium">지원자:</span>
-                    <span>{project.applicants}명</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <span className="font-medium">예산:</span>
-                    <span>{project.budget}</span>
-                  </div>
-                </div>
-              </div>
-            </Link>
+            <ProjectDetail key={project.id} project={project} />
           ))}
         </div>
 
