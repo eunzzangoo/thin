@@ -1,16 +1,15 @@
 version: 1
+applications:
+  - appRoot: thin
 frontend:
   phases:
     preBuild:
       commands:
-        - npm ci
+        - npm install
     build:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: .next
+    baseDirectory: out
     files:
       - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
