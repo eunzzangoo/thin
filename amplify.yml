@@ -1,23 +1,16 @@
 version: 1
-appRoot: thin
 frontend:
   phases:
     preBuild:
       commands:
-        - npm install
-        - npm install -g npm@latest
+        - npm ci
     build:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: out
+    baseDirectory: .next
     files:
       - '**/*'
   cache:
     paths:
       - node_modules/**/*
-  customHeaders:
-    - pattern: '**/*'
-      headers:
-        - key: 'Cache-Control'
-          value: 'public, max-age=0, must-revalidate' 
