@@ -7,30 +7,69 @@ type Project = {
   id: string;
   title: string;
   description: string;
-  budget: string;
   period: string;
-  location: string;
-  keywords: string[];
-  createdAt: string;
+  applicants: number;
+  budget: string;
+  deadline: string;
+  isRemote: boolean;
 };
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState('latest');
 
-  // 임시 데이터
+  // 프로젝트 데이터
   const projects: Project[] = [
     {
       id: '1',
-      title: '웹사이트 리뉴얼 프로젝트',
-      description: '기존 웹사이트를 모던한 디자인으로 리뉴얼하고자 합니다.',
-      budget: '500만원 ~ 1000만원',
-      period: '1개월',
-      location: '서울',
-      keywords: ['웹개발', '디자인', 'UI/UX'],
-      createdAt: '2024-03-20',
+      title: '전기/계장 제어시스템 설계, PLC, HMI 자동제어 업무',
+      description: '액상 포장용 충진기 등 자동화 기계의 제어시스템 설기(PLC, HMI) 업무를 담당할 경력 5년 이상의 전문가를 모집합니다',
+      period: '6개월 이상',
+      applicants: 3,
+      budget: '1,800만원',
+      deadline: 'D-15',
+      isRemote: true,
     },
-    // 더 많은 프로젝트 데이터 추가 가능
+    {
+      id: '2',
+      title: '전장부품(전자/전기장치) 개발/설계',
+      description: 'Wiring harness 회로 개발/설계',
+      period: '3개월',
+      applicants: 8,
+      budget: '1,050만원',
+      deadline: 'D-15',
+      isRemote: true,
+    },
+    {
+      id: '3',
+      title: '건설물폐기물처리장 경영지원부 회계 업무',
+      description: '건설폐기물처리장 경영지원부 회계 직원을 모집합니다',
+      period: '12개월 이상',
+      applicants: 11,
+      budget: '250만원/월',
+      deadline: 'D-28',
+      isRemote: true,
+    },
+    {
+      id: '4',
+      title: '기계설계(플랜트공학) 경력자 모집',
+      description: '기계설계(플랜트공학), 경력 3년 이상의 전문가를 모집합니다',
+      period: '12개월 이상',
+      applicants: 2,
+      budget: '350만원/월',
+      deadline: 'D-15',
+      isRemote: true,
+    },
+    {
+      id: '5',
+      title: '사무 관리직 모집',
+      description: '사무 관리직 경력 1년 이상의 전문가를 모집합니다',
+      period: '3개월',
+      applicants: 12,
+      budget: '210만원/월',
+      deadline: 'D-15',
+      isRemote: true,
+    },
   ];
 
   const categories = [
@@ -106,35 +145,33 @@ export default function ProjectsPage() {
             >
               <div className="p-6">
                 <div className="flex justify-between items-start mb-4">
-                  <h2 className="text-xl font-semibold text-gray-900">{project.title}</h2>
-                  <span className="text-sm text-gray-500">{project.createdAt}</span>
-                </div>
-                
-                <p className="text-gray-600 mb-4 line-clamp-2">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.keywords.map((keyword) => (
-                    <span
-                      key={keyword}
-                      className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm"
-                    >
-                      {keyword}
+                  <div className="flex items-center gap-2">
+                    {project.isRemote && (
+                      <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs font-medium">
+                        원격
+                      </span>
+                    )}
+                    <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs font-medium">
+                      모집 {project.deadline}
                     </span>
-                  ))}
+                  </div>
                 </div>
+
+                <h2 className="text-xl font-semibold text-gray-900 mb-2">{project.title}</h2>
+                <p className="text-gray-600 mb-4">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                  <div className="flex items-center gap-1">
-                    <span className="font-medium">예산:</span>
-                    <span>{project.budget}</span>
-                  </div>
                   <div className="flex items-center gap-1">
                     <span className="font-medium">기간:</span>
                     <span>{project.period}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <span className="font-medium">지역:</span>
-                    <span>{project.location}</span>
+                    <span className="font-medium">지원자:</span>
+                    <span>{project.applicants}명</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className="font-medium">예산:</span>
+                    <span>{project.budget}</span>
                   </div>
                 </div>
               </div>
