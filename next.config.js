@@ -9,7 +9,7 @@ const nextConfig = {
       },
     ],
   },
-  trailingSlash: true,
-}
+  trailingSlash: true, // 선택사항 (라우트에 `/` 붙이기 원할 때만)
+};
 
-module.exports = nextConfig 
+module.exports = nextConfig;

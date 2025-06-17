@@ -4,12 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect } from 'react';
 
-declare global {
-  interface Window {
-    ChannelIO: any;
-  }
-}
-
 export default function ContactSection() {
   return (
     <section className="py-24 bg-gradient-to-tr from-gray-50 via-white to-gray-50/50">
