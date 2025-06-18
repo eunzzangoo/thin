@@ -19,7 +19,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       if (!window.ChannelIO) return;
 
       window.ChannelIO('boot', {
-        pluginKey: '7804c491-af61-4599-925f-fe4807fe1d42',
+        pluginKey: process.env.NEXT_PUBLIC_CHANNEL_IO_KEY,
         hideChannelButtonOnBoot: true,
         customLauncherSelector: '#__none__',
         locale: 'ko',
